@@ -2,7 +2,7 @@
 
 
 // state.tables.closest : list of closest asteroids between two given dates
-function closest(
+export default function closest(
     state={ // initial state
         length: 0,
         asteroids: {}
