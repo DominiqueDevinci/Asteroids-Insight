@@ -1,15 +1,21 @@
+import {RECEIVE_CLOSEST_ASTEROIDS} from '../Actions.js'
+
 // here all reducers wich deals with datas wich will be displayed in tables
 
 
 // state.tables.closest : list of closest asteroids between two given dates
-export default function closest(
+export function closest(
     state={ // initial state
         length: 0,
         asteroids: {}
     }, action
 ){
+    console.log(action);
     switch(action.type){
         case RECEIVE_CLOSEST_ASTEROIDS:
+            if(!action.asteroids){
+                return state // no data
+            }
             // receive this kind of data in action.asteroids
             // ex: https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-09-03&end_date=2017-09-08&api_key=DEMO_KEY
             return {

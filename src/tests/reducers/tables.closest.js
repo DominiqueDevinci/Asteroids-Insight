@@ -1,26 +1,7 @@
 import expect from 'expect'
 import deepFreeze from 'deep-freeze'
-import closest from '../../reducers/tables.js'
-
-testClosest(); // run test when import this file
-
-function testClosest(){
-
-    let prevState=closest(); // return initial state
-    let action=receiveAsteroids(inputData); // build input data witch action creator and eample set
-
-    deepFreeze(action) // to ensure that my reducer don't use side effect (it should be pure)
-    deepFreeze(prevState)
-
-    let nextState=closest(prevState, action)
-
-    expect(nextState.length).equal(2) // check counter
-    expect(nextState.asteroids["2017-09-07"][0].name).equal("(2017 PN26)") // check name of first asteroid
-
-    console.log("closest test ok");
-}
-
-
+import {closest} from '../../reducers/tables.js'
+import {receiveAsteroids} from '../../Actions.js'
 
 
 // example of data set usefull to test my reducer tables.closest
@@ -120,4 +101,21 @@ const inputData = {
       } ]
     } ]
   }
+}
+
+
+export default function testClosest(){
+    console.log("running test: closest");
+    let prevState=closest(undefined, receiveAsteroids(undefined)); // return initial state
+    let action=receiveAsteroids(inputData); // build input data witch action creator and eample set
+
+    deepFreeze(action) // to ensure that my reducer don't use side effect (it should be pure)
+    deepFreeze(prevState)
+
+    let nextState=closest(prevState, action)
+
+    expect(nextState.length).toEqual(2) // check counter
+    expect(nextState.asteroids["2017-09-07"][0].name).toEqual("(2017 PN26)") // check name of first asteroid
+
+    console.log("[OK]");
 }

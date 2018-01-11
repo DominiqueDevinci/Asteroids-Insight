@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Router, Route, browserHistory} from 'react-router'
 import {Grid, Row, Col} from 'react-bootstrap'
-import Toolbar from './components/toolbar.js'
+import Toolbar from './components/Toolbar.js'
 import {createBrowserHistory} from 'history'
 import './App.css';
 
