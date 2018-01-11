@@ -6,4 +6,4 @@ To run it on your computer, clone this repository and just type serve -s build.
 
 If you want to work on it in development mode, you need to install these following packages :
 
- npm install react react-dom react-redux redux-devtools redux-thunk cross-fetch expect deep-freeze fusioncharts react-fusioncharts react-bootstrap react-router react-router-dom react-csv --save
+ npm install react react-dom react-redux redux-devtools redux-thunk cross-fetch expect deep-freeze fusioncharts react-fusioncharts react-bootstrap react-router react-router-dom react-bootstrap-date-picker react-bootstrap-router react-csv --save
