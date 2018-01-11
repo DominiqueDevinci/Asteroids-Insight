@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class FilterClosest extends Component{
+export class FilterDateClosest extends Component {
     constructor(props){
         super(props)
     }
@@ -12,7 +12,7 @@ class FilterClosest extends Component{
         }
 
         return (
-            <h1 style={style} >
+            <p style={style} > Astroids for wich the closest approach date is between  </p>
         )
     }
 }

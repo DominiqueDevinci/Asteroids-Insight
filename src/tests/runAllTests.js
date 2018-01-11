@@ -1,5 +1,6 @@
-import testClosest from './reducers/tables.closest.js'
+import {testReceiveClosest, testRequestClosest} from './reducers/tables.closest.js'
 
 export default function runTests(){
-    testClosest();
+    testRequestClosest()
+    testReceiveClosest()
 }
