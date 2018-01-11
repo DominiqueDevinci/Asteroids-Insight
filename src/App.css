@@ -1,24 +1,48 @@
-.App {
-  text-align: center;
+h1, h2{
+    color: white;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.navbar-brand {
+    color: white !important;
+    text-shadow: 2px 2px 15px #20305E;
+    font-family: 'Courier';
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.nav a:hover{
+    color: white !important;
+    text-shadow: 2px 2px 15px;
 }
-
-.App-intro {
-  font-size: large;
+.nav a.active{
+    color: white !important;
+    text-shadow: 2px 2px 15px;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#page:hover{
+	box-shadow: 0px 0px 10px #20305E;
+}
+#page {
+    width: 75%;
+	margin:  auto;
+	background-color: rgba(255, 255, 255, 0.75);
+	min-height: 100%;
+    height: 100%;
+	box-shadow: 0px 0px 15px black;
+	padding: 10px 25px 10px 25px;
+}
+html, #root, #wrapper {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-image: url('resources/images/spaceback.jpg');
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.navbar-default {
+	background-color: rgba(110, 110, 110, 0.6);
+}
+.navbar-default .navbar-nav>li>a {
+	color: white;
+	font-weight: bold;
 }
