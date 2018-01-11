@@ -1,0 +1,28 @@
+{
+  "name": "asteroids-insight",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cross-fetch": "^1.1.1",
+    "deep-freeze": "0.0.1",
+    "expect": "^22.0.6",
+    "fusioncharts": "^3.12.2",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.0",
+    "react-csv": "^1.0.10",
+    "react-dom": "^16.2.0",
+    "react-fusioncharts": "^1.0.4",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-scripts": "0.9.5",
+    "redux-devtools": "^3.4.1",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
