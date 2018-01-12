@@ -7,8 +7,6 @@ RECEIVE_CLOSEST_ASTEROIDS
 
 const initialState={ // initial state
     loading: true,
-    dateStart: new Date().toLocaleString(),
-    dateEnd:  new Date().toLocaleString(),
     asteroids: []
 }
 
@@ -34,18 +32,8 @@ export function resultTable(
 
             Object.keys(action.asteroids.near_earth_objects).map( (approachDate) => {
                 action.asteroids.near_earth_objects[approachDate].map((asteroid) => {
-                    asteroids.push(
-                        {...asteroid,
-                           close_approach_data : [
-                                 {
-                                   close_approach_date : approachDate,
-                                   relative_velocity : asteroid.relative_velocity,
-                                   miss_distance : asteroid.miss_distance,
-                                   orbiting_body : asteroid.orbiting_body
-                                 }
-                             ]
-                         }
-                    ) // end of append
+                    asteroids.push(asteroid)
+                    return;
                 }) // end of second map
             }) // end of first map
 

@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import {Route} from 'react-router'
 import {Row} from 'react-bootstrap'
+import FilterDateClosest from '../components/FilterDateClosest.js'
 
 export const ContainerFilters = () => (
     <Row>
-        <Route Path="/browse" >
-            <p> main </p>
-        </Route>
-        <Route Path="/closest" >
-            <p> test </p>
-        </Route>
+        <Route path="/closest" component={FilterDateClosest} />
     </Row>
 )

@@ -4,11 +4,6 @@ import {Row} from 'react-bootstrap'
 
 export const ContainerDetails = () => (
     <Row>
-        <Route Path="/browse" >
-            <p> main </p>
-        </Route>
-        <Route Path="/closest" >
-            <p> test </p>
-        </Route>
+        
     </Row>
 )

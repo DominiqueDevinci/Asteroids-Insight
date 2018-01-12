@@ -1,4 +1,4 @@
-
+import fetch from 'cross-fetch'
 
 /* action creators */
 
@@ -20,5 +20,42 @@ export function receiveClosestAsteroids(asteroids){
     return {
         type: RECEIVE_CLOSEST_ASTEROIDS,
         asteroids
+    }
+}
+
+export const SET_FILTER_DATE_START = ' SET_FILTER_DATE_START'
+export function setFilterDateStart(dateStart){
+    return {
+        type: SET_FILTER_DATE_START,
+        dateStart
+    }
+}
+
+export const SET_FILTER_DATE_END = ' SET_FILTER_DATE_END'
+export function setFilterDateEnd(dateEnd){
+    return {
+        type: SET_FILTER_DATE_END,
+        dateEnd
+    }
+}
+
+
+
+/***** Impure function (used by redux-thunk) to communicate with the REST API   ******/
+export function fetchClosestAsteroids(){
+
+
+    // thunk
+    return (dispatch, getState) => {
+        let dateStart=getState().filters.dateStart
+        let dateEnd=getState().filters.dateEnd
+        console.log("date start:"+dateStart)
+        // first dispatch request event
+        dispatch(requestClosestAsteroids(dateStart, dateEnd))
+
+        //then fetch data
+        return fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date="+dateStart+"&end_date="+dateEnd+"&api_key=DEMO_KEY")
+          .then(res => res.json())
+          .then(jres => dispatch(receiveClosestAsteroids(jres)))
     }
 }
