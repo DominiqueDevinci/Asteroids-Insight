@@ -12,7 +12,7 @@ export class FilterDateClosest extends Component {
         }
 
         return (
-            <p style={style} > Astroids for wich the closest approach date is between  </p>
+            <p style={style} > Asteroids for wich the closest approach date is between  </p>
         )
     }
 }

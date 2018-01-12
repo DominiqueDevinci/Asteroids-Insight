@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap';
 import { Grid, Row, Col, Nav, Navbar, NavItem} from 'react-bootstrap'
 
-const Toolbar = () => {
+export const Toolbar = () => {
     return (
+     <Row>
         <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
@@ -23,7 +24,6 @@ const Toolbar = () => {
                 </Navbar.Collapse>
 
             </Navbar>
+        </Row>
     );
 };
-
-export default Toolbar;

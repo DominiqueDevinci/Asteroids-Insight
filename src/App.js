@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import {Router, Route, browserHistory} from 'react-router'
 import {Grid, Row, Col} from 'react-bootstrap'
-import Toolbar from './components/Toolbar.js'
+import {Toolbar} from './containers/Toolbar.js'
+import {ContainerFilters} from './containers/ContainerFilters.js'
+import {ContainerTables} from './containers/ContainerTables.js'
+import {ContainerDetails} from './containers/ContainerDetails.js'
 import {createBrowserHistory} from 'history'
 import './App.css';
+
 
 
 
@@ -18,24 +22,12 @@ class App extends Component {
     return (
       <Router history={this.history} >
       <Grid id="wrapper" fluid> {/* main wrapper */}
-          <Row>  {/* toolbar */}
-            <Toolbar />
-          </Row>
-          <div id="page" >
-              <Row> {/* filters row */}
-                  <Route Path="/" >
-                      <p> main </p>
-                  </Route>
-                  <Route Path="/test" >
-                      <p> test </p>
-                  </Route>
-              </Row>
-              <Row> {/*row of result (list of asteroids) */}
+          <Toolbar />
 
-              </Row>
-              <Row> {/* row of details about the selected asteroid (if selected) */}
-
-              </Row>
+          <div id="page" > {/* css wrapper for my custom style */}
+              <ContainerFilters /> {/* filters to select data (date in /closest page, orbit in /browse page ...)*/}
+              <ContainerTables /> {/* Tables to display result of fetch */}
+              <ContainerDetails /> {/* details about selected asteroid */ }
             </div>
       </Grid>
       </Router>
