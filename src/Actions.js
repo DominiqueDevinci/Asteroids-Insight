@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch'
+import NASA_API_KEY from './config/keys.js'
 
 /* action creators */
 
@@ -62,7 +63,7 @@ export function fetchClosestAsteroids(){
         dispatch(requestClosestAsteroids(dateStart, dateEnd))
 
         //then fetch data
-        return fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date="+dateStart+"&end_date="+dateEnd+"&api_key=DEMO_KEY")
+        return fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date="+dateStart+"&end_date="+dateEnd+"&api_key="+NASA_API_KEY)
           .then(res => res.json())
           .then(jres => dispatch(receiveClosestAsteroids(jres)))
     }
@@ -81,7 +82,7 @@ export function fetchAsteroids(){
         dispatch(requestClosestAsteroids(dateStart, dateEnd))
 
         //then fetch data
-        return fetch("https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY")
+        return fetch("https://api.nasa.gov/neo/rest/v1/neo/browse?api_key="+NASA_API_KEY)
           .then(res => res.json())
           .then(jres => dispatch(receiveAsteroids(jres)))
     }
