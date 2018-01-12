@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap';
-import { Grid, Row, Col, Nav, Navbar, NavItem} from 'react-bootstrap'
+import { Row, Nav, Navbar, NavItem} from 'react-bootstrap'
 
 export const Toolbar = () => {
     return (

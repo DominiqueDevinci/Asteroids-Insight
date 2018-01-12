@@ -48,6 +48,14 @@ export function receiveAsteroids(asteroids){
     }
 }
 
+export const THROW_ERROR = 'THROW_ERROR'
+export function throwError(msg){
+    return{
+        type: THROW_ERROR,
+        msg
+    }
+}
+
 
 
 /***** Impure function (used by redux-thunk) to communicate with the REST API   ******/
@@ -66,6 +74,8 @@ export function fetchClosestAsteroids(){
         return fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date="+dateStart+"&end_date="+dateEnd+"&api_key="+NASA_API_KEY)
           .then(res => res.json())
           .then(jres => dispatch(receiveClosestAsteroids(jres)))
+          .catch( (err) => dispatch(throwError("Request failed. The interval date must be < 7 days !")))
+
     }
 }
 

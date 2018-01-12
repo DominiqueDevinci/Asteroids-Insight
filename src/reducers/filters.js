@@ -4,8 +4,8 @@ SET_FILTER_DATE_END} from '../Actions.js'
 
 export function filters(
     state={
-        dateStart: new Date().toISOString("YYYY-MM-DD").substring(0, 10),
-        dateEnd:  new Date().toISOString("YYYY-MM-DD").substring(0, 10)
+        dateStart: '2017-09-01', //new Date().toISOString("YYYY-MM-DD").substring(0, 10),
+        dateEnd:  '2017-09-08' //new Date().toISOString("YYYY-MM-DD").substring(0, 10)
     }, action = {type: undefined}
 ){
     switch(action.type){

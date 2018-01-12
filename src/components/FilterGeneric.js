@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {fetchAsteroids} from '../Actions.js'
-import {Form,  Button} from 'react-bootstrap'
-import spinner from '../resources/images/spinner.svg'
+import {Form} from 'react-bootstrap'
 
 class FilterGeneric extends Component {
 
@@ -31,7 +29,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        
+
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(FilterGeneric)

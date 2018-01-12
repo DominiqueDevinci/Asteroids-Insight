@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Table, Col} from 'react-bootstrap'
+import {Table, Col, Alert} from 'react-bootstrap'
 import {fetchClosestAsteroids} from '../Actions.js'
 
 class AsteroidTable extends Component {
@@ -10,9 +10,11 @@ class AsteroidTable extends Component {
     }
 
     render() {
-
-        return (
-        <Col sm={9} >
+        if(this.props.error){
+            return (<Col sm={9} > <Alert bsStyle="danger"> {this.props.error} </Alert> </Col>)
+        }
+        return  (
+            <Col sm={9} >
             <Table striped bordered condensed hover>
                 <thead>
                     <tr>
@@ -29,7 +31,7 @@ class AsteroidTable extends Component {
                 </thead>
                 <tbody>
                     {
-                        this.props.tableView.map((asteroid)=>{
+                        this.props.tableView.map((asteroid, key)=>{
                             return (
                                 <tr>
                                     <td> {asteroid.neo_reference_id} </td>
@@ -53,7 +55,6 @@ class AsteroidTable extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.asteroids)
     return state.asteroids
 }
 const mapDispatchToProps = (dispatch) => {

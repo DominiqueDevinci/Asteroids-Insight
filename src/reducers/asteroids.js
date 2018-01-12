@@ -1,7 +1,8 @@
 import {
 REQUEST_CLOSEST_ASTEROIDS,
 RECEIVE_CLOSEST_ASTEROIDS,
-RECEIVE_GENERIC_ASTEROID
+RECEIVE_GENERIC_ASTEROID,
+THROW_ERROR
 } from '../Actions.js'
 
 // here all reducers wich deals with datas wich will be displayed in tables
@@ -18,6 +19,11 @@ export function asteroids(
 ){
 
     switch(action.type){
+        case THROW_ERROR:
+            return {...initialState,
+                loading: false,
+                error: action.msg
+            }
         case RECEIVE_CLOSEST_ASTEROIDS:
             if(!action.asteroids){
                 return state // no data, return initial state
@@ -30,7 +36,7 @@ export function asteroids(
             //https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY
 
             var asteroids=[]
-            console.log(action.asteroids.near_earth_objects)
+            //console.log(action.asteroids.near_earth_objects)
 
             Object.keys(action.asteroids.near_earth_objects).map( (approachDate) => {
                 action.asteroids.near_earth_objects[approachDate].map((asteroid) => {
@@ -62,7 +68,7 @@ function computeAsteroids(asteroids){
         loading: false,
         tableView: [],
         chartHazardous: [{label: "Well knowed", value: 0},
-                    {label: "Potentially hazardous", value: 0}]
+                    {label: "Hazardous", value: 0}]
     }
 
     asteroids.map((asteroid)=>{
