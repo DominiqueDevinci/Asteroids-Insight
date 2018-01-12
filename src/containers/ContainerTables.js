@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import {Route} from 'react-router'
 import {Row} from 'react-bootstrap'
+import AsteroidTable from '../components/AsteroidTable.js'
 
 export const ContainerTables = () => (
     <Row>
+        <AsteroidTable />
         <Route Path="/closest" >
-            <p> main </p>
+
         </Route>
         <Route Path="/browse" >
-            <p> test </p>
+
         </Route>
     </Row>
 )
