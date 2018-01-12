@@ -23,7 +23,7 @@ class FilterDateClosest extends Component {
                         placeholder="YYYY-MM-DD" onChange={this.props.setDateEnd} />
                     </FormGroup>
                     <Button bsStyle="primary" onClick={this.props.requestAsteroids} >
-                        { this.props.resultTable.loading==true?( <img style={{height: "20px"}} src={spinner} /> ):"Go !"} 
+                        { this.props.loading==true?( <img style={{height: "20px"}} src={spinner} /> ):"Go !"} 
                      </Button>
                 </Form>
             </div>
