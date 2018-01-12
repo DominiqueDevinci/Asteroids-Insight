@@ -42,7 +42,6 @@ class AsteroidTable extends Component {
 
 
     buildRows(asteroid){
-        console.log(asteroid)
         var rowspanCounter=0; // counter to deal with rowspan ... (global var)
         // i don't want to repeat the same approach date 10x
 

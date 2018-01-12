@@ -15,11 +15,11 @@ export const Toolbar = () => {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <LinkContainer to="/browse" ><NavItem> Browse </NavItem></LinkContainer>
-                        <LinkContainer to="/closest" ><NavItem> Closest asteroids </NavItem></LinkContainer>
+                        <LinkContainer to="/asteroids/browse" ><NavItem> Browse </NavItem></LinkContainer>
+                        <LinkContainer to="/asteroids/closest" ><NavItem> Closest asteroids </NavItem></LinkContainer>
                     </Nav>
                     <Nav pullRight>
-                        <LinkContainer to="/account" ><NavItem> Account </NavItem></LinkContainer>
+                        <LinkContainer to="/signin" ><NavItem> Connection </NavItem></LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
 

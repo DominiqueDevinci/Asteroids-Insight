@@ -39,6 +39,14 @@ export function setFilterDateEnd(dateEnd){
     }
 }
 
+export const RECEIVE_GENERIC_ASTEROIDS = 'RECEIVE_GENERIC_ASTEROID'
+export function receiveAsteroids(asteroids){
+    return{
+        type: RECEIVE_GENERIC_ASTEROIDS,
+        asteroids
+    }
+}
+
 
 
 /***** Impure function (used by redux-thunk) to communicate with the REST API   ******/
@@ -57,5 +65,24 @@ export function fetchClosestAsteroids(){
         return fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date="+dateStart+"&end_date="+dateEnd+"&api_key=DEMO_KEY")
           .then(res => res.json())
           .then(jres => dispatch(receiveClosestAsteroids(jres)))
+    }
+}
+
+
+export function fetchAsteroids(){
+
+
+    // thunk
+    return (dispatch, getState) => {
+        let dateStart=getState().filters.dateStart
+        let dateEnd=getState().filters.dateEnd
+        console.log("date start:"+dateStart)
+        // first dispatch request event
+        dispatch(requestClosestAsteroids(dateStart, dateEnd))
+
+        //then fetch data
+        return fetch("https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY")
+          .then(res => res.json())
+          .then(jres => dispatch(receiveAsteroids(jres)))
     }
 }

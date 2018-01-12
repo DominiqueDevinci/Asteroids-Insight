@@ -5,6 +5,7 @@ import AsteroidTable from '../components/AsteroidTable.js'
 
 export const ContainerTables = () => (
     <Row>
-        <AsteroidTable />
+        <Route path="/asteroids" component={AsteroidTable} />
+
     </Row>
 )

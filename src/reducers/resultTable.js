@@ -1,6 +1,7 @@
 import {
 REQUEST_CLOSEST_ASTEROIDS,
-RECEIVE_CLOSEST_ASTEROIDS
+RECEIVE_CLOSEST_ASTEROIDS,
+RECEIVE_GENERIC_ASTEROID
 } from '../Actions.js'
 
 // here all reducers wich deals with datas wich will be displayed in tables
@@ -40,6 +41,11 @@ export function resultTable(
             return {
                 loading: false,
                 asteroids
+            }
+        case RECEIVE_GENERIC_ASTEROID:
+            return {
+                loading: false,
+                asteroids: action.asteroids.near_earth_objects
             }
         case REQUEST_CLOSEST_ASTEROIDS:
             return { // app is fetching, so remove data and display loader

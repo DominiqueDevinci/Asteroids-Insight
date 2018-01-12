@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Router} from 'react-router'
+import {Router, Redirect, Route} from 'react-router'
 import {Grid} from 'react-bootstrap'
 import {Toolbar} from './containers/Toolbar.js'
 import {ContainerFilters} from './containers/ContainerFilters.js'
@@ -21,7 +21,13 @@ class App extends Component {
 
     return (
       <Router history={this.history} >
+
           <Grid id="wrapper" fluid> {/* main wrapper */}
+
+          <Route exact path="/" render={() => (
+                <Redirect from='/' to='/asteroids/closest'/>
+            )}/>
+
               <Toolbar />
 
               <div id="page" > {/* css wrapper for my custom style */}

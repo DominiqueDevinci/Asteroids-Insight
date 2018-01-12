@@ -1,10 +1,3 @@
-[![NPM version][npm-badge]][npm] [![Build Status][travis-ci-image]][travis-ci-url]
-
-[![Dependency Status][deps-badge]][deps]
-[![devDependency Status][dev-deps-badge]][dev-deps]
-[![peerDependency Status][peer-deps-badge]][peer-deps]   
-
-
 # Deployment
 
 Project is available in production mode on my server : http://dblaze.hopto.org:81
