@@ -2,8 +2,6 @@
 
 Project is available in production mode on my server : http://dblaze.hopto.org:81
 
-To run it on your computer, clone this repository and just type serve -s build.
-
 If you want to work on it in development mode, you need to install these following packages :
 
 ```bash
