@@ -33,7 +33,7 @@ class AsteroidTable extends Component {
                     {
                         this.props.tableView.map((asteroid, key)=>{
                             return (
-                                <tr>
+                                <tr key={asteroid.neo_reference_id} >
                                     <td> {asteroid.neo_reference_id} </td>
                                     <td> {asteroid.name} </td>
                                     <td> {asteroid.diameter_avg} </td>

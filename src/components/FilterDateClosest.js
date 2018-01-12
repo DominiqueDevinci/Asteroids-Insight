@@ -3,6 +3,7 @@ import {Form, FormControl, FormGroup, Button} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {setFilterDateStart, setFilterDateEnd, fetchClosestAsteroids} from '../Actions.js'
 import spinner from '../resources/images/spinner.svg'
+import {CSVLink} from 'react-csv'
 class FilterDateClosest extends Component {
 
     render(){
@@ -23,8 +24,10 @@ class FilterDateClosest extends Component {
                         placeholder="YYYY-MM-DD" onChange={this.props.setDateEnd} />
                     </FormGroup>
                     <Button bsStyle="primary" onClick={this.props.requestAsteroids} >
-                        { this.props.asteroids.loading===true?( <img alt="loading" style={{height: "20px"}} src={spinner} /> ):"Go !"} 
+                        { this.props.asteroids.loading===true?( <img alt="loading" style={{height: "20px"}} src={spinner} /> ):"Go !"}
                      </Button>
+                     <CSVLink className="btn btn-success" style={{float: "right", marginRight: "20px"}}
+                      data={this.props.asteroids.tableView} > Download in CSV </CSVLink>
                 </Form>
             </div>
         )

@@ -41,7 +41,6 @@ export function asteroids(
             Object.keys(action.asteroids.near_earth_objects).map( (approachDate) => {
                 action.asteroids.near_earth_objects[approachDate].map((asteroid) => {
                     asteroids.push(asteroid)
-                    return;
                 }) // end of second map
             }) // end of first map
 

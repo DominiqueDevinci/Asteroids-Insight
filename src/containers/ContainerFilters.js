@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Route} from 'react-router'
 import {Row} from 'react-bootstrap'
 import FilterDateClosest from '../components/FilterDateClosest.js'
