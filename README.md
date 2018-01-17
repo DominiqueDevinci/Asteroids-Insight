@@ -1,6 +1,6 @@
 # Deployment
 
-Project is available in production mode on my server : http://raspi.dominique-blaze.fr
+Project is available in production mode on my server : http://raspi.dominique-blaze.fr:81/
 
 If you want to work on it in development mode, you need to install these following packages :
 
