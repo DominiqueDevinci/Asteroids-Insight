@@ -8,7 +8,7 @@ If you want to work on it in development mode, you need to install these followi
  npm install react react-dom redux react-redux redux-devtools redux-thunk cross-fetch expect deep-freeze fusioncharts react-fusioncharts react-bootstrap react-router react-router-dom react-datepicker moment react-moment react-bootstrap-router history react-csv --save
  ```
 
-#Conclusion
+# Conclusion
 
 This is my first app in React, and then, it cannot be perfect.
 Even if i think the global organization is not so bad, i've experienced some difficulties wich merit closer consideration.
